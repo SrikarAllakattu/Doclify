@@ -1,30 +1,30 @@
-import ImageToPdf from "../../components/ImageToPdf";
+import MergePdfReorderSafe from "../../components/MergePdfReorderSafe";
 
 export const metadata = {
-  title: "Image to PDF Converter – Free & Private Online Tool",
+  title: "Merge PDF Online – Reorder Pages Before Merging",
   description:
-    "Convert images to PDF online for free. No uploads, no signup. JPG and PNG to PDF directly in your browser.",
+    "Merge PDF files online and reorder individual pages before merging. Free, private, and browser-based.",
 };
 
-export default function ImageToPdfPage() {
+export default function MergePdfPage() {
   return (
     <main style={{ padding: "40px", fontFamily: "Arial, sans-serif" }}>
-      <h1>Image to PDF Converter</h1>
+      <h1>Merge PDF (Reorder Pages)</h1>
 
       <p>
-        Convert JPG, PNG, and other images into a single PDF file.
-        Everything runs in your browser — your files never leave your device.
+        Combine multiple PDFs into one file. Reorder individual pages
+        before merging to get the exact final document you want.
       </p>
 
-      <ImageToPdf />
+      <MergePdfReorderSafe />
 
       <section style={{ marginTop: "40px" }}>
-        <h2>Why use this Image to PDF tool?</h2>
+        <h2>Features</h2>
         <ul>
-          <li>✔ Free forever</li>
-          <li>✔ No file uploads</li>
-          <li>✔ Works offline after load</li>
-          <li>✔ Secure & private</li>
+          <li>✔ Page-level reordering</li>
+          <li>✔ No uploads to servers</li>
+          <li>✔ Free & unlimited</li>
+          <li>✔ Works entirely in browser</li>
         </ul>
       </section>
     </main>
