@@ -46,7 +46,7 @@ export default function Home() {
     <div className="container">
       {/* HERO */}
       <div className="hero">
-        <h1>Doclify</h1>
+        <h1>allMYpdfs </h1>
 <p>
   Fast, private, browser-based document tools.
   Convert, merge, split, and protect PDFs — all in your browser.
