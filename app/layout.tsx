@@ -7,9 +7,10 @@ export const metadata = {
   description:
     "AllMyPDFs helps you merge, split, unlock, and convert PDFs securely online in your browser.",
   verification: {
-    google: "<meta name="google-site-verification" content="elNKj4ENXnX9MloJ9sY3EZTJtZbk-XqzprfTEuLYHIs" />",
+    google: "elNKj4ENXnX9MloJ9sY3EZTJtZbk-XqzprfTEuLYHIs",
   },
 };
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
