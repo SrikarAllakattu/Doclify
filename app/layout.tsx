@@ -17,6 +17,13 @@ export const metadata = {
   description:
     "Doclify is a fast, private, browser-based platform to convert, merge, split, protect, and manage PDF files. No uploads. No tracking.",
 };
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "AllMyPDFs – Free Online PDF Tools",
+  description:
+    "AllMyPDFs helps you merge, split, unlock, and convert PDFs securely online in your browser.",
+};
 
 
 export default function RootLayout({
