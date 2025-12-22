@@ -36,15 +36,21 @@ export default function ProtectPdf() {
 }
 
 function download(bytes: Uint8Array, name: string) {
-  const blob = new Blob([bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength)],
-  { type: "application/pdf" }
-)
-;
+  const safeBytes = new Uint8Array(bytes); // force safe ArrayBuffer copy
+
+  const blob = new Blob([safeBytes], {
+    type: "application/pdf",
+  });
+
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
   a.download = name;
+  document.body.appendChild(a);
   a.click();
+  document.body.removeChild(a);
   URL.revokeObjectURL(url);
 }
+
+
 
