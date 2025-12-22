@@ -8,16 +8,19 @@ export default function ProtectPdf() {
   const [password, setPassword] = useState("");
   const [status, setStatus] = useState("");
 
-  const protect = async () => {
-    if (!file || !password) return;
+const protect = async () => {
+  if (!file || !password) return;
 
-    const pdf = await PDFDocument.load(await file.arrayBuffer());
-    pdf.encrypt({ userPassword: password, ownerPassword: password });
+  const pdf = await PDFDocument.load(await file.arrayBuffer());
 
-    const bytes = await pdf.save();
-    download(bytes, "protected.pdf");
-    setStatus("Password-protected PDF downloaded!");
-  };
+  // ❌ pdf-lib does NOT support encryption
+  // pdf.encrypt({ userPassword: password, ownerPassword: password });
+
+  const bytes = await pdf.save();
+  download(bytes, "protected.pdf");
+  setStatus("PDF downloaded (encryption not supported in browser)");
+};
+
 
   return (
     <div>
@@ -51,6 +54,7 @@ function download(bytes: Uint8Array, name: string) {
   document.body.removeChild(a);
   URL.revokeObjectURL(url);
 }
+
 
 
 
