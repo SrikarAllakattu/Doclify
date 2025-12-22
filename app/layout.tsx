@@ -2,10 +2,13 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "AllMyPDFs – Free Online PDF Tools",
   description:
     "AllMyPDFs helps you merge, split, unlock, and convert PDFs securely online in your browser.",
+  verification: {
+    google: "<meta name="google-site-verification" content="elNKj4ENXnX9MloJ9sY3EZTJtZbk-XqzprfTEuLYHIs" />",
+  },
 };
 
 const geistSans = Geist({
