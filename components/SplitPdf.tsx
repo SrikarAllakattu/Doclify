@@ -46,10 +46,11 @@ export default function SplitPdf() {
 }
 
 function download(bytes: Uint8Array, name: string) {
-  const blob = new Blob(
-    [bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength)],
-    { type: "application/pdf" }
-  );
+  const safeBytes = new Uint8Array(bytes); // create safe ArrayBuffer copy
+
+  const blob = new Blob([safeBytes], {
+    type: "application/pdf",
+  });
 
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
@@ -60,5 +61,7 @@ function download(bytes: Uint8Array, name: string) {
   document.body.removeChild(a);
   URL.revokeObjectURL(url);
 }
+
+
 
 
