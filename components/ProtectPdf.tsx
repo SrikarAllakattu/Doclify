@@ -36,7 +36,10 @@ export default function ProtectPdf() {
 }
 
 function download(bytes: Uint8Array, name: string) {
-  const blob = new Blob([bytes]);
+  const blob = new Blob([bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength)],
+  { type: "application/pdf" }
+)
+;
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
@@ -44,3 +47,4 @@ function download(bytes: Uint8Array, name: string) {
   a.click();
   URL.revokeObjectURL(url);
 }
+
